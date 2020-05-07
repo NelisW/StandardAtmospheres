@@ -1,0 +1,5 @@
+Visible 0.43  0.69  
+NIR 0.7 0.9  
+SWIR 1.0 1.7  
+MWIR 3.6 4.9  
+LWIR 8. 12.
