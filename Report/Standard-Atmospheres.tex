@@ -105,7 +105,9 @@ The atmospheric profiles captured here are not all equally analysed. Set-A is an
 %and finally the document begin.
 \begin{document}
 \WPlayout
-\tableofcontents
+
+%https://tex.stackexchange.com/questions/82840/pdflatex-tex-issue-with-section-which-contains-underscore
+\begingroup \catcode`\_=13 \def_{\_} \tableofcontents \endgroup 
 
 \chapter{Introduction}
 
@@ -140,7 +142,7 @@ ground level P=1012~mbar, T=21C, RH=76\%, 14~g/m$^3$ absolute humidity.
 The lattitude/longitude are -34.454\si{\degree} (South) and 339.601\si{\degree} (West from Greenwich).
 Local time is 11:00 (09:00 GMT) on day 319 (15 November).
 
-\subsubsection{Irene\purl{_}somer\purl{_}dag}
+\subsubsection{Irene\_somer\_dag}
 \label{sec:Irenesomerdag}
 
 \textbf{Summer day in Pretoria, 23~\si{\kilo\metre} visibility}
@@ -214,7 +216,7 @@ The terrain albedo is zero for all the terrains, except for
 \lstinline{PretoriaTropicalRural23km15Nov09h-desertAlbedo} which uses the Modtran desert albedo.
 
 
-\subsubsection{Overberg\purl{_}2\purl{_}2\purl{_}1996}
+\subsubsection{Overberg\_2\_2\_1996}
 \label{sec:Overberg221996}
 
 \textbf{Summer day in Pretoria, 23~\si{\kilo\metre} visibility}
