@@ -5,6 +5,7 @@
 \usepackage{ragged2e}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{url}
 \usepackage{graphicx}
 \usepackage{textcomp} % additional fonts, required for upquote in listings and \textmu
 \usepackage{placeins} % FloatBarrier
@@ -74,6 +75,7 @@ prebreak=\raisebox{0ex}[0ex][0ex]{$\dlsh$} % add linebreak symbol
 \newlength{\textwidthm}
 \setlength{\textwidthm}{\textwidth}
 
+\newcommand\purl[1]{\protect\url{#1}} % "protected url"
 
 
 
@@ -120,7 +122,107 @@ The path definitions and data are stored in the git repository at\\
 \subsection{OSSIM Atmosphere Scenarios}
 \label{sec:OSSIMAtmosphereScenarios}
 
-To be completed later.
+The OSSIM data files have two variations: a Lowtran version and a Modtran version. The Modtran version has the word Modtran appended to the filename.  The filenames have the \lstinline{*.inp} extension, but these are standard \lstinline{tape5} files.
+
+OSSIM Modtran files are normally slant paths.
+
+Modtran  lattitude/longitude conventions is North of the Equator and West of Greenwich.
+
+The files reported here have aerosol types, surface albedo, visibility and date and time of day. OSSIM overwrites these values with the values supplied in the scenario files.
+
+\subsubsection{DCOTBMLSNavMar15Nov11hMod4}
+\label{sec:DCOTBMLSNavMar15Nov11hMod4}
+
+\textbf{MLS, Navy Maritime, good 65~\si{\kilo\metre} visibility}
+
+Mid-Latitude Summer, Navy Maritime aerosol with 4.1 \si{\metre\per\second} wind speed (current and 24-hour average) with visibility of 65~\si{\kilo\metre},
+ground level P=1012~mbar, T=21C, RH=76\%, 14~g/m$^3$ absolute humidity.
+The lattitude/longitude are -34.454\si{\degree} (South) and 339.601\si{\degree} (West from Greenwich).
+Local time is 11:00 (09:00 GMT) on day 319 (15 November).
+
+\subsubsection{Irene\purl{_}somer\purl{_}dag}
+\label{sec:Irenesomerdag}
+
+\textbf{Summer day in Pretoria, 23~\si{\kilo\metre} visibility}
+
+Summer day in Irene, Pretoria.
+User model (21 layers), 23~\si{\kilo\metre} visibility Rural aerosol,  ground level 1413~\si{metre} above sea level,  P=849~mbar, T=24.8C, RH=61\%, 13.9~g/m$^3$  absolute humidity.
+
+\subsubsection{MidlatitudeSummer}
+\label{sec:MidlatitudeSummer}
+
+\textbf{MLS, moderate temperature, 23~\si{\kilo\metre} visibility}
+
+MLS, 23~\si{\kilo\metre} visibility Rural aerosol,  P=1012~mbar, T=21C, RH=76\%, 14~g/m$^3$ absolute humidity.
+
+\subsubsection{MidlatitudeWinter}
+\label{sec:MidlatitudeWinter}
+
+\textbf{MLW, cold,  23~\si{\kilo\metre} visibility}
+
+MLW, 23~\si{\kilo\metre} visibility Rural aerosol,
+  P=1018~mbar, T=-1C, RH=77\%, 3~g/m$^3$ absolute humidity.
+
+\subsubsection{USStandardModtran}
+\label{sec:USStandardModtran}
+
+\textbf{US Standard, cool 23~\si{\kilo\metre} visibility}
+
+US Standard, 23~\si{\kilo\metre} visibility Rural aerosol,
+P=1013~mbar, T=15C, RH=46\%, 5.9~g/m$^3$ absolute humidity. 
+
+\subsubsection{UserDefinedTemplate}
+\label{sec:UserDefinedTemplate}
+
+This file is not used directly in its original form in OSSIM. This file is a template used when a meteorological file is used. The meteorological file contents is used to overwrite some fields in this template file.
+
+\subsubsection{Tropical}
+\label{sec:Tropical}
+
+\textbf{Moderate temperature, 23 km Rural visibility}
+
+Tropical, 23 km visibility  Rural aerosol, ground level P=1013~mbar, T=26.5C, RH=75\%, 18.8~g/m$^3$ absolute humidity.
+
+This is the same as Set-A TropicalUrban.
+
+\subsubsection{SubarticWinter}
+\label{sec:SubarticWinter}
+
+\textbf{Sub-Artic winter day, very cold with moderate visibility}
+
+Sub-Arctic Winter, 23 km visibility  Rural aerosol
+ P=1013~mbar, T=-15.9C, RH=80\%, 1~g/m$^3$ absolute humidity.
+
+\subsubsection{SubarticSummer:}
+\label{sec:SubarticSummer}
+
+\textbf{Scandinavian summer day }
+
+Sub-Arctic Summer, 23 km visibility  Rural  aerosol, P=1010~mbar, T=14C, RH=75\%, 9~g/m$^3$ absolute humidity.
+
+
+\subsubsection{PretoriaTropicalRural23km15NovXXh}
+\label{sec:PretoriaTropicalRural23km15NovXXh}
+
+\textbf{Warm temperature, 23 km Rural visibility, different times of day}
+
+Tropical, 23 km visibility  Rural aerosol, ground level P=1013~mbar, T=26.5C, RH=75\%, 18.8~g/m$^3$ absolute humidity.
+The lattitude/longitude are for Pretoria at  -25.75\si{\degree} (South) and 331.71\si{\degree} (West from Greenwich).
+Three different local times are used in the separate files [09:00, 12:00, 15:00] (07:00, 10:00, 13:00 GMT) on day 319 (15 November).
+
+The terrain albedo is zero for all the terrains, except for 
+\lstinline{PretoriaTropicalRural23km15Nov09h-desertAlbedo} which uses the Modtran desert albedo.
+
+
+\subsubsection{Overberg\purl{_}2\purl{_}2\purl{_}1996}
+\label{sec:Overberg221996}
+
+\textbf{Summer day in Pretoria, 23~\si{\kilo\metre} visibility}
+
+Summer day at Overberg Test Range, Western Cape.
+User model (33 layers), 23~\si{\kilo\metre} visibility Rural aerosol,  0~\si{metre} above sea level,   at ground level P=1011~mbar, T=26.5C, RH=69\%, 17.3~g/m$^3$  absolute humidity.
+
+
 
 \subsection{Morticia Atmosphere Scenarios}
 \label{sec:MorticiaAtmosphereScenarios}
@@ -198,7 +300,7 @@ Tropical, 5 km visibility  Urban aerosol, ground level P=1013~mbar, T=26.5C, RH=
 \subsubsection{USStdNavyMarVis23km:}
 \label{sec:USStdNavyMarVis23km}
 
-\textbf{Moderately Low temperature, moderate humudity, 23 km Navy Maritime visibility}
+\textbf{Moderately Low temperature, moderate humidity, 23 km Navy Maritime visibility}
 
 US Standard, 23 km visibility  Navy Maritime aerosol, ground level P=1013~mbar, T=15C, RH=46\%, 5.9~g/m$^3$ absolute humidity.  Windspeed of 7.4 m/s corresponds to a Beaufort sea state 4.
 
